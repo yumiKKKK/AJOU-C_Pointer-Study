@@ -1,34 +1,34 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-//¿­Ç÷ C ¹®Á¦11-1 [1Â÷¿ø ¹è¿­ÀÇ È°¿ë]
+//ì—´í˜ˆ C ë¬¸ì œ11-1 [1ì°¨ì› ë°°ì—´ì˜ í™œìš©]
 int main() {
-	////¹®Á¦1
+	////ë¬¸ì œ1
 	printf("Q11-1-1\n");
-	int arr[5]; //¹è¿­ ¼±¾ğ
-	printf("ÃÑ 5°³ÀÇ Á¤¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä.:");
-	for (int i = 0; i < 5; i++) //»ç¿ëÀÚ ¹è¿­ ÀÔ·Â
+	int arr[5]; //ë°°ì—´ ì„ ì–¸
+	printf("ì´ 5ê°œì˜ ì •ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”.:");
+	for (int i = 0; i < 5; i++) //ì‚¬ìš©ì ë°°ì—´ ì…ë ¥
 		scanf("%d", &arr[i]);
-	//ÃÖ´ñ°ª
+	//ìµœëŒ“ê°’
 	int max = arr[0];
 	for (int i = 1; i < 5; i++) {
 		if (max < arr[i])
 			max = arr[i];
 	}
-	printf("ÃÖ¼Ú°ª: %d\n", max);
-	//ÃÖ¼Ú°ª
+	printf("ìµœì†Ÿê°’: %d\n", max);
+	//ìµœì†Ÿê°’
 	int min = arr[0];
 	for (int i = 1; i < 5; i++) {
 		if (min > arr[i]) 
 			min = arr[i];
 	}
-	printf("ÃÖ´ñ°ª: %d\n", min);
-	//ÃÑ ÇÕ
+	printf("ìµœëŒ“ê°’: %d\n", min);
+	//ì´ í•©
 	int total = 0;
 	for (int i = 0; i < 5; i++)
 		total += arr[i];
-	printf("ÃÑ ÇÕ: %d\n", total);
+	printf("ì´ í•©: %d\n", total);
 
-	////¹®Á¦ 2
+	////ë¬¸ì œ 2
 	printf("\nQ11-1-2\n");
 	char arr2[] = {'G', 'o', 'o', 'd', ' ', 't', 'i', 'm', 'e'};
 	int ar2Len = sizeof(arr2) / sizeof(char);
