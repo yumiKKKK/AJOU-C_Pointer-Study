@@ -5,8 +5,10 @@ int main() {
 	int* ptr1 = &num1, * ptr2 = &num2;
 	*ptr1 += 10;
 	*ptr2 -= 10;
-	ptr1 = &num2;
-	ptr2 = &num1;
-	printf("ptr1°¡ °¡¸®Å°´Â º¯¼ö¿¡ ÀúÀåµÈ °ª: %d\nptr2°¡ °¡¸®Å°´Â º¯¼ö¿¡ ÀúÀåµÈ °ª:%d\n", *ptr1, *ptr2);
+	int *temp;
+	temp=ptr1;
+	ptr1 = ptr2;
+	ptr2 = temp;
+	printf("ptr1ê°€ ê°€ë¦¬í‚¤ëŠ” ë³€ìˆ˜ì— ì €ì¥ëœ ê°’: %d\nptr2ê°€ ê°€ë¦¬í‚¤ëŠ” ë³€ìˆ˜ì— ì €ì¥ëœ ê°’:%d\n", *ptr1, *ptr2);
 	return 0;
 }
