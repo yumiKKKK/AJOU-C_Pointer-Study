@@ -9,6 +9,9 @@ int main() {
 	temp=ptr1;
 	ptr1 = ptr2;
 	ptr2 = temp;
+	//mtd2)
+	//ptr1=&num2;
+	//ptr2=&num1;
 	printf("ptr1가 가리키는 변수에 저장된 값: %d\nptr2가 가리키는 변수에 저장된 값:%d\n", *ptr1, *ptr2);
 	return 0;
 }
