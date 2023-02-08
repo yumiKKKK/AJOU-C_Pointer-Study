@@ -16,8 +16,12 @@ int main(void) {
 	//컴퓨터가 고른 숫자 배열 cp에 저장
 	char cp[3] = { 0, };
 	srand((int)time(NULL));
-	for (int i = 0; i < 3; i++) 
+	for (int i = 0; i < 3; i++) {
 		cp[i] = rand() % 10; //0~9
+		//3 숫자 중복방지 코드:
+		for(int j=0;j<i;j++)
+			i--;
+	}
 
 	printf("Start Game!\n");
 	//3strike 얻을 때까지 반복
