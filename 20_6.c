@@ -1,11 +1,11 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 /*
-¿­Ç÷C 20Àå
-µµÀü!ÇÁ·Î±×·¡¹Ö3 µµÀü6
-[¼ýÀÚ ¸ÂÃß±â °ÔÀÓ == ¾ß±¸ °ÔÀÓ]
-ÇÁ·Î±×·¥: ¼ýÀÚ ¸ÂÃß±â °ÔÀÓ
-ÀÔ·Â: 0~9 ¹üÀ§ÀÇ ¼­·Î ´Ù¸¥ ¼ýÀÚ ¼¼ °³
+ì—´í˜ˆC 20ìž¥
+ë„ì „!í”„ë¡œê·¸ëž˜ë°3 ë„ì „6
+[ìˆ«ìž ë§žì¶”ê¸° ê²Œìž„ == ì•¼êµ¬ ê²Œìž„]
+í”„ë¡œê·¸ëž¨: ìˆ«ìž ë§žì¶”ê¸° ê²Œìž„
+ìž…ë ¥: 0~9 ë²”ìœ„ì˜ ì„œë¡œ ë‹¤ë¥¸ ìˆ«ìž ì„¸ ê°œ
 */
 
 #include <stdio.h>
@@ -13,23 +13,23 @@
 #include <time.h>
 
 int main(void) {
-	//ÄÄÇ»ÅÍ°¡ °í¸¥ ¼ýÀÚ ¹è¿­ cp¿¡ ÀúÀå
+	//ì»´í“¨í„°ê°€ ê³ ë¥¸ ìˆ«ìž ë°°ì—´ cpì— ì €ìž¥
 	char cp[3] = { 0, };
 	srand((int)time(NULL));
 	for (int i = 0; i < 3; i++) 
-		cp[i] = rand() % 9;
+		cp[i] = rand() % 10; //0~9
 
 	printf("Start Game!\n");
-	//3strike ¾òÀ» ¶§±îÁö ¹Ýº¹
-	int count = 0; //¸î ¹ø ¸¸¿¡ 3strikeÀÎÁö ¼¼´Â countº¯¼ö
+	//3strike ì–»ì„ ë•Œê¹Œì§€ ë°˜ë³µ
+	int count = 0; //ëª‡ ë²ˆ ë§Œì— 3strikeì¸ì§€ ì„¸ëŠ” countë³€ìˆ˜
 	int strike = 0, ball;
 	while (strike < 3) {
 		count += 1;
-		//»ç¿ëÀÚ ¼ýÀÚ ÀÔ·Â¹Þ±â
+		//ì‚¬ìš©ìž ìˆ«ìž ìž…ë ¥ë°›ê¸°
 		int user[3] = { 0, };
-		printf("3°³ÀÇ ¼ýÀÚ ¼±ÅÃ: ");
+		printf("3ê°œì˜ ìˆ«ìž ì„ íƒ: ");
 		scanf("%d %d %d", &user[0], &user[1], &user[2]);
-		//strike¿Í ball°³¼ö ¼¼±â
+		//strikeì™€ ballê°œìˆ˜ ì„¸ê¸°
 		strike = 0, ball = 0;
 		for (int i = 0; i < 3; i++) {
 			if (user[i] == cp[i])
@@ -37,8 +37,8 @@ int main(void) {
 			else if ((user[0] == cp[i]) | (user[1] == cp[i]) | (user[2] == cp[i]))
 				ball++;
 		}
-		//µµÀü °á°ú Ãâ·Â
-		printf("%d¹øÂ° µµÀü °á°ú: %dstrike, %dball!!\n", count, strike, ball);
+		//ë„ì „ ê²°ê³¼ ì¶œë ¥
+		printf("%dë²ˆì§¸ ë„ì „ ê²°ê³¼: %dstrike, %dball!!\n", count, strike, ball);
 	}
 	printf("\n\nGame Over!\n");
 	return 0;
