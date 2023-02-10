@@ -17,12 +17,13 @@ int main(void) {
 	char cp[3] = { 0, };
 	srand((int)time(NULL));
 	for (int i = 0; i < 3; i++) {
-		cp[i] = rand() % 10; //0~9
-		//3 숫자 중복방지 코드:
-		for(int j=0;j<i;j++)
-			i--;
+		cp[i] = rand() % 10;
+		//숫자 중복 방지 코드:
+		for (int j = 0; j < i; j++){
+			if (cp[j] == cp[i])
+				i--;
+		}
 	}
-
 	printf("Start Game!\n");
 	//3strike 얻을 때까지 반복
 	int count = 0; //몇 번 만에 3strike인지 세는 count변수
