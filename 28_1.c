@@ -1,37 +1,37 @@
 #define _CRT_SECURE_NO_WARNINGS
 /*
-µµ¼­°ü¸®¿ë ÇÁ·Î±×·¥
+ë„ì„œê´€ë¦¬ìš© í”„ë¡œê·¸ë¨
 2023-02-18
 */
 #include <stdio.h>
-#include <stdlib.h> //malloc
 #include <string.h> //strlen
 #define MAX 50
-//µµ¼­ Á¤º¸¸¦ ´ã´Â ±¸Á¶Ã¼ ¼±¾ğ
+//ë„ì„œ ì •ë³´ë¥¼ ë‹´ëŠ” êµ¬ì¡°ì²´ ì„ ì–¸
 typedef struct book {
-	char title[MAX]; //Á¦¸ñ
-	char* author; //ÀúÀÚ¸í(°ø¹éÀ» Æ÷ÇÔ)
-	int pages;//ÆäÀÌÁö¼ö
+	char title[MAX]; //ì œëª©
+	char author[MAX]; //ì €ìëª…(ê³µë°±ì„ í¬í•¨)
+	int pages;//í˜ì´ì§€ìˆ˜
 } Book;
 
 int main(void) {
-	Book b[3]; //±¸Á¶Ã¼ ¹è¿­ ¼±¾ğ
-	//3±Ç Á¤º¸ ÀÔ·Â¹Ş±â
-	printf("µµ¼­ Á¤º¸ ÀÔ·Â\n");
+	Book b[3]; //êµ¬ì¡°ì²´ ë°°ì—´ ì„ ì–¸
+	//3ê¶Œ ì •ë³´ ì…ë ¥ë°›ê¸°
+	printf("ë„ì„œ ì •ë³´ ì…ë ¥\n");
 	int i;
 	for (i = 0; i < 3; i++) {
-		b[i].author = (char*)malloc(sizeof(char) * MAX); //µ¿ÀûÇÒ´ç
-		printf("ÀúÀÚ: "); scanf("%s", b[i].author); getchar(); //¹öÆÛºñ¿ì±â
-		printf("Á¦¸ñ: "); fgets(b[i].title, sizeof(b[i].title), stdin);
-		printf("ÆäÀÌÁö¼ö: "); scanf("%d", &(b[i].pages)); 
+		printf("ì €ì: "); fgets(b[i].author, sizeof(b[i].author), stdin); 
+		printf("ì œëª©: "); fgets(b[i].title, sizeof(b[i].title), stdin);
+		printf("í˜ì´ì§€ìˆ˜: "); scanf("%d", &(b[i].pages)); 
+		getchar(); //ë²„í¼ë¹„ìš°ê¸°
 	}
-	//µµ¼­ Á¤º¸ Ãâ·ÂÇÏ±â
-	printf("\nµµ¼­ Á¤º¸ Ãâ·Â: \n");
+	//ë„ì„œ ì •ë³´ ì¶œë ¥í•˜ê¸°
+	printf("\në„ì„œ ì •ë³´ ì¶œë ¥ \n");
 	for (i = 0; i < 3; i++) {
-		printf("book%d\nÀúÀÚ: %s\n", i+1, b[i].author);
-		(b[i].title)[strlen(b[i].title) - 1] = '\0'; //fgets·Î ÀÎÇÑ \n Á¦°Å
-		printf("Á¦¸ñ: %s\n", b[i].title);
-		printf("ÆäÀÌÁö¼ö: %d\n", b[i].pages);
+		(b[i].author)[strlen(b[i].author) - 1] = '\0'; //fgetsë¡œ ì¸í•œ \n ì œê±°
+		printf("book%d\nì €ì: %s\n", i+1, b[i].author);
+		(b[i].title)[strlen(b[i].title) - 1] = '\0'; //fgetsë¡œ ì¸í•œ \n ì œê±°
+		printf("ì œëª©: %s\n", b[i].title);
+		printf("í˜ì´ì§€ìˆ˜: %d\n", b[i].pages);
 	}
 	return 0;
 }
